@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2014 Alexander Oprisnik
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height_2l"
+        android:background="@color/highlight"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/keyline_margin"
+        android:paddingRight="@dimen/keyline_margin">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/keyline_margin"
+            android:adjustViewBounds="true"
+            android:maxHeight="50dp"
+            android:maxWidth="50dp"
+            tools:src="@drawable/ic_launcher_flat"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_title"
+                tools:text="Awesome Application"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_2l_subtitle"
+                tools:text="com.oprisnik.awesome.app"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:numColumns="@integer/cols_results_overview"
+        android:dividerHeight="@dimen/padding_card"
+        android:paddingBottom="@dimen/list_padding_top"
+        android:paddingLeft="@dimen/padding_card"
+        android:paddingRight="@dimen/padding_card"
+        android:paddingTop="@dimen/list_padding_top"
+        android:scrollbarStyle="outsideOverlay"
+        android:horizontalSpacing="@dimen/card_spacing_horiz"
+        android:verticalSpacing="@dimen/card_spacing_vert"
+        android:listSelector="@android:color/transparent"
+        tools:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/keyline_content_start"
+        android:paddingRight="@dimen/keyline_content_start">
+
+        <LinearLayout
+            android:id="@+id/stage1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/analysis_progress_separator">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textSize="@dimen/text_title_medium"
+                android:text="@string/app_parsing_title"/>
+
+            <ProgressBar
+                android:id="@+id/progress1"
+                style="@style/ProgressBarAppTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stage2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_title_medium"
+                android:textColor="@color/text"
+                android:text="@string/app_analysis_title"/>
+
+            <ProgressBar
+                android:id="@+id/progress2"
+                style="@style/ProgressBarAppTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

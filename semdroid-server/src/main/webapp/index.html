@@ -1,0 +1,103 @@
+<!doctype html>
+<!--
+  ~ Copyright 2014 Alexander Oprisnik
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Semdroid - Semantic Android Application Analysis Using Machine Learning">
+    <meta name="keywords"
+          content="Android, static analysis, machine learning, semantic patterns, cryptography, SMS, malware">
+    <meta name="author" content="Alexander Oprisnik">
+    <link rel="shortcut icon"
+          href="images/semdroid.ico"/>
+
+    <title>Semdroid</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/loading.css"/>
+</head>
+
+<body>
+<div id="main">
+    <div class="filechooser">
+        <h1>Semdroid</h1>
+
+        <h2>Select an Android application to be analyzed.</h2>
+        <a class="button apkselect green" id="apkselect">Select APK</a>
+
+        <form id="my-form" enctype="multipart/form-data" method="post" name="my-form">
+            <input id="android-apk" type="file" name="android-apk">
+        </form>
+    </div>
+
+    <div class="more-info">
+        <a href="http://semdroid.oprisnik.com" class="btn btn-default">
+            <i class="glyphicon glyphicon-info-sign info-icon"></i> <span class="more-info-text">More information</span>
+        </a>
+
+        <a href="http://semdroid.oprisnik.com/demo-results.html" class="btn btn-default">
+            <i class="glyphicon glyphicon-eye-open info-icon"></i> <span class="more-info-text">Demo results</span>
+        </a>
+    </div>
+
+    <!--<div class="google-play">-->
+    <!--<p>Android application also available on Google Play</p>-->
+    <!--<a href="https://play.google.com/store/apps/details?id=com.oprisnik.semdroid">-->
+    <!--<img alt="Get it on Google Play"-->
+    <!--src="/images/brand/en_generic_rgb_wo_60.png" />-->
+    <!--</a>-->
+    <!--</div>-->
+
+</div>
+
+<div id="analyzing">
+    <h1>Analyzing...</h1>
+
+    <div id="loading">
+        <div id="circularG">
+            <div id="circularG_1" class="circularG"></div>
+            <div id="circularG_2" class="circularG"></div>
+            <div id="circularG_3" class="circularG"></div>
+            <div id="circularG_4" class="circularG"></div>
+            <div id="circularG_5" class="circularG"></div>
+            <div id="circularG_6" class="circularG"></div>
+            <div id="circularG_7" class="circularG"></div>
+            <div id="circularG_8" class="circularG"></div>
+        </div>
+    </div>
+</div>
+
+<div id="results-container">
+    <div id="results"></div>
+</div>
+
+
+<footer class="text-center copyright">
+    Copyright &copy; 2014 - Alexander Oprisnik
+</footer>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/semdroid.js"></script>
+
+</body>
+</html>

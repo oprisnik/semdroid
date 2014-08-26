@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2014 Alexander Oprisnik
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+  
+<plugin class="com.oprisnik.semdroid.plugin.weka.WekaAppAnalysisPlugin">
+    <name>Custom asymmetric cryptography</name>
+
+    <!-- Feature extractor settings for the Semantic Pattern Analysis -->
+    <feature-extractor class="com.oprisnik.semdroid.feature.extractor.SemanticPatternAnalysisFeatureExtractor">
+        <semantic-patterns-net>semantic-patterns.net</semantic-patterns-net>
+        <arff-header-file>header.arff</arff-header-file>
+
+        <!-- We only create a single feature layer for methods -->
+        <feature-layer-generator class="com.oprisnik.semdroid.feature.layer.MethodSingleFeatureLayerGenerator">
+
+            <!-- Class filter. If we use the DefaultClassFilter, we do not necessarily need to include this line -->
+            <!-- <class-filter class="com.oprisnik.semdroid.filter.DefaultClassFilter" /> -->
+
+            <!-- We want methods with more than 5 opcodes -->
+            <method-filter class="com.oprisnik.semdroid.filter.DefaultMethodFilter">
+                <min-opcodes>5</min-opcodes>
+            </method-filter>
+
+            <opcode-grouper class="com.oprisnik.semdroid.grouper.opcode.ConfigurableOpcodeGrouper">
+                <file>opcode-grouper.txt</file>
+            </opcode-grouper>
+
+            <method-instance-generator class="com.oprisnik.semdroid.feature.instance.method.ConfigurableMIG">
+                <method-call-inclusion-depth>0</method-call-inclusion-depth>
+
+                <method-call-filter class="com.oprisnik.semdroid.filter.MethodCallWhiteAndBlacklistFilter">
+                    <whitelist>
+                        <list>
+                            <string>java.math</string>
+                        </list>
+                    </whitelist>
+                </method-call-filter>
+
+                <method-call-value-generator class="com.oprisnik.semdroid.feature.value.MethodCallNameFVG"/>
+                
+                <add-opcode-histogram>true</add-opcode-histogram>
+                <normalize-opcode-histogram>true</normalize-opcode-histogram>
+                <add-method-calls>true</add-method-calls>
+            </method-instance-generator>
+            
+        </feature-layer-generator>
+    </feature-extractor>
+
+    <!-- Data classifier settings (WEKA) -->
+    <data-classifier class="com.oprisnik.semdroid.plugin.weka.WekaDataClassifier">
+        <weka-model>svm.model</weka-model>
+    </data-classifier>  
+</plugin>

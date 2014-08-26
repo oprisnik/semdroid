@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2014 Alexander Oprisnik
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<semdroid>
+    <app-parser class="com.oprisnik.semdroid.app.parser.DefaultAndroidAppParser">
+
+        <class-filter class="com.oprisnik.semdroid.filter.WhiteAndBlackList">
+            <blacklist>
+                <file>class-blacklist.txt</file>
+            </blacklist>
+        </class-filter>
+
+        <log-source-code>false</log-source-code>
+
+        <logMethodPermissions>true</logMethodPermissions>
+
+        <!-- Permission map settings -->
+        <permission-map-file>permissionmap/APICalls.txt</permission-map-file>
+
+        <!-- Also available: -->
+        <!-- <method-filter class="..."/> -->
+        <!-- <method-call-filter class="..."/> -->
+
+        <!-- <save-unique-data-only>false</save-unique-data-only> -->
+
+        <!-- What to log? Default: everything -->
+
+<!--         <logArrayStmt>true</logArrayStmt>
+        <logBinopLitXStmt>true</logBinopLitXStmt>
+        <logBinopStmt> true</logBinopStmt>
+        <logClassStmt>true</logClassStmt>
+        <logCmpStmt>true</logCmpStmt>
+        <logConstStmt>true</logConstStmt>
+        <logFieldStmt>true</logFieldStmt>
+        <logFillArrayStmt>true</logFillArrayStmt>
+        <logFilledNewArrayStmt>true</logFilledNewArrayStmt>
+        <logJumpStmt>true</logJumpStmt>
+        <logLookupSwitchStmt>true</logLookupSwitchStmt>
+        <logMethodStmt>true</logMethodStmt>
+        <logMonitorStmt>true</logMonitorStmt>
+        <logMoveStmt>true</logMoveStmt>
+        <logReturnStmt>true</logReturnStmt>
+        <logTableSwitchStmt>true</logTableSwitchStmt>
+        <logUnopStmt>true</logUnopStmt>
+        <logTryCatchStmt>true</logTryCatchStmt>
+        <logVisitArguments>true</logVisitArguments>
+        <logVisitLabel>true</logVisitLabel>
+        <logVisitLineNumber>true</logVisitLineNumber>
+        <logVisitLocalVariable>true</logVisitLocalVariable> -->W
+
+    </app-parser>
+</semdroid>

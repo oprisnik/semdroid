@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2014 Alexander Oprisnik
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+  
+<plugin class="com.oprisnik.semdroid.plugin.weka.WekaAppAnalysisPlugin">
+    <name>SMS Broadcast Receivers</name>
+
+    <!-- Feature extractor settings for the Semantic Pattern Analysis -->
+    <feature-extractor class="com.oprisnik.semdroid.feature.extractor.SemanticPatternAnalysisFeatureExtractor">
+        <semantic-patterns-net>semantic-patterns.net</semantic-patterns-net>
+        <arff-header-file>header.arff</arff-header-file>
+        <feature-layer-generator class="com.oprisnik.semdroid.feature.layer.MethodSingleFeatureLayerGenerator">
+
+            <!-- Class filter. We only want broadcast receivers, so we use the BroadcastReceiverClassFilter -->
+            <class-filter class="com.oprisnik.semdroid.filter.BroadcastReceiverClassFilter" />
+
+            <!-- We only want onReceive methods -->
+            <!-- Instead of using a whitelist, we could also use com.oprisnik.semdroid.filter.OnReceiveMethodFilter -->
+            <method-filter class="com.oprisnik.semdroid.filter.MethodWhiteAndBlacklistFilter">
+                <whitelist>
+                    <list>
+                        <string>onReceive</string>
+                    </list>
+                </whitelist>
+            </method-filter>
+
+            <opcode-grouper class="com.oprisnik.semdroid.grouper.opcode.ConfigurableOpcodeGrouper">
+                <file>opcode-grouper.txt</file>
+            </opcode-grouper>
+
+            <method-instance-generator class="com.oprisnik.semdroid.feature.instance.method.ConfigurableMIG">
+                <method-call-inclusion-depth>1</method-call-inclusion-depth>
+
+                <!-- We only want method calls that go to the android.telephony package -->
+                <method-call-filter class="com.oprisnik.semdroid.filter.MethodCallWhiteAndBlacklistFilter">
+                    <whitelist>
+                        <list>
+                            <string>android.telephony</string>
+                        </list>
+                    </whitelist>
+                </method-call-filter>
+
+                <!-- We group all called methods by class value -->
+                <method-call-value-generator class="com.oprisnik.semdroid.feature.value.MethodCallClassNameFVG"></method-call-value-generator>
+
+                <!-- We only want local variables that go to the android.telephony package -->
+                <local-var-filter class="com.oprisnik.semdroid.filter.LocalVarWhiteAndBlacklistFilter">
+                    <whitelist>
+                        <list>
+                            <string>Landroid/telephony</string>
+                        </list>
+                    </whitelist>
+                </local-var-filter>
+
+                <!-- The feature type is the local variable type -->
+                <local-var-value-generator class="com.oprisnik.semdroid.feature.value.LocalVarTypeFVG"></local-var-value-generator>
+                
+                <!-- Features: We add a normalized opcode histogram, method calls and local variables (with the filters and settings specified above) -->
+                <add-opcode-histogram>true</add-opcode-histogram>
+                <normalize-opcode-histogram>true</normalize-opcode-histogram>
+                <add-method-calls>true</add-method-calls>
+                <add-local-vars>true</add-local-vars>
+            </method-instance-generator>
+            
+        </feature-layer-generator>
+    </feature-extractor>
+
+    <!-- Data classifier settings (WEKA) -->
+    <data-classifier class="com.oprisnik.semdroid.plugin.weka.WekaDataClassifier">
+        <weka-model>svm.model</weka-model>
+    </data-classifier>  
+</plugin>

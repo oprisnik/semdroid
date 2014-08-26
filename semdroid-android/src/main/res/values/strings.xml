@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2014 Alexander Oprisnik
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<resources>
+
+    <string name="app_name">Semdroid</string>
+    <string name="menu_settings">Settings</string>
+    <string name="empty">Empty!</string>
+    <string name="pick_analysis">Pick analysis</string>
+    <string name="analysis_results">Analysis results</string>
+    <string name="access_analysis_results_description">Access Semdroid analysis results</string>
+    <string name="access_analysis_results_label">Access Semdroid analysis results</string>
+    <string name="access_analysis_results_group">Semdroid</string>
+    <string name="app_list_tip">Select an application to be analyzed</string>
+    <string name="app_parsing_title">Parsing application package</string>
+    <string name="app_analysis_title">Analyzing application</string>
+
+
+    <!-- Plugins -->
+    <string name="plugin_custom_crypto_symm">Custom Symmetric Cryptography</string>
+    <string name="plugin_custom_crypto_asymm">Custom Asymmetric Cryptography</string>
+    <string name="plugin_crypto_apis">Used Crypto APIs</string>
+    <string name="plugin_sms_receiver">Has SMS Broadcast Receivers?</string>
+    <string name="plugin_declared_permissions">Declared Permissions</string>
+    <string name="plugin_used_permissions">Used Permissions</string>
+    <string name="plugin_broadcast_receivers">Broadcast Receivers</string>
+    <string name="plugin_sms_permission">Has SMS permission?</string>
+    <string name="no_labels">None</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- About -->
+    <string name="menu_about">About</string>
+    <string name="about_version">Version</string>
+    <string name="about_text">Developed by Alexander Oprisnik © 2014</string>
+    <string name="about_btn_more_info">More information</string>
+    <string name="about_neutral_btn">OK</string>
+
+
+    <plurals
+        name="plural_methods">
+        <item quantity="one">One method</item>
+        <item quantity="other">%d methods</item>
+    </plurals>
+    <plurals
+        name="plural_classes">
+        <item quantity="one">One class</item>
+        <item quantity="other">%d classes</item>
+    </plurals>
+
+    <plurals
+        name="plural_receivers">
+        <item quantity="one">One receiver</item>
+        <item quantity="other">%d receivers</item>
+    </plurals>
+
+    <plurals
+        name="plural_more_labels">
+        <item quantity="one">and one more</item>
+        <item quantity="other">and %d more</item>
+    </plurals>
+
+</resources>
