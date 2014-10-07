@@ -29,17 +29,20 @@ Some example plugins can be found in [semdroid-plugin-examples](../semdroid-plug
 In [semdroid-plugin-spa](../semdroid-plugin-spa) you can find the implementation of the *Semantic Pattern Analysis*.
 This analysis approach is based on machine learning and on the so-called *Semantic Pattern Transformation* developed
 by Peter Teufl.
+More information on the Semantic Pattern Analysis can be found on http://semdroid.oprisnik.com/
 
 Currently, there are three plugins available that are based on the Semantic Pattern Analysis:
 
 * Detecting custom symmetric cryptography 
-([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugin/custom_symm_crypto/))
+([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugins/custom_symm_crypto/))
 * Detecting custom asymmetric cryptography 
-([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugin/custom_asymm_crypto/))
+([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugins/custom_asymm_crypto/))
 * Detecting SMS broadcast receivers
-([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugin/sms_receiver/))
+([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugins/sms_receiver/))
 
-
+Each of these plugin folders contain a *plugin.xml* file that holds the plugin configuration.
+The folders also contain additional files, like white- or blacklists, opcode group definitions,
+and machine learning models (e.g., *svm.model* for trained support vector machines).
 
 
 ## Implementing new plugins
