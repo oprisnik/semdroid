@@ -33,11 +33,11 @@ by Peter Teufl.
 Currently, there are three plugins available that are based on the Semantic Pattern Analysis:
 
 * Detecting custom symmetric cryptography 
-([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugins/semdroid/plugin/custom_symm_crypto/))
+([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugin/custom_symm_crypto/))
 * Detecting custom asymmetric cryptography 
-([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugins/semdroid/plugin/custom_asymm_crypto/))
+([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugin/custom_asymm_crypto/))
 * Detecting SMS broadcast receivers
-([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugins/semdroid/plugin/sms_receiver/))
+([Plugin configuration](../semdroid-server/src/main/webapp/WEB-INF/plugin/sms_receiver/))
 
 
 

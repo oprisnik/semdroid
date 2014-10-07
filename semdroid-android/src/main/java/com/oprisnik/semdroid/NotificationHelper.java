@@ -31,7 +31,7 @@ public class NotificationHelper {
 
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-        builder.setContentTitle("Analysis finished");
+        builder.setContentTitle(context.getString(R.string.notification_analysis_finished_title));
         builder.setContentText(packageName);
 
         //workaround for bug: https://code.google.com/p/android/issues/detail?id=61850
@@ -40,7 +40,7 @@ public class NotificationHelper {
         }
 
         builder.setContentIntent(getContentIntent(context, packageName, resultFile))
-                .setTicker("Analyzed " + packageName)
+                .setTicker(context.getString(R.string.notification_analysis_finished_ticker, packageName))
                 .setSmallIcon(R.drawable.ic_launcher_flat)
                 .setAutoCancel(true);
 

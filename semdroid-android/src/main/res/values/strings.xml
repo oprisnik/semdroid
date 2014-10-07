@@ -29,6 +29,10 @@
     <string name="app_parsing_title">Parsing application package</string>
     <string name="app_analysis_title">Analyzing application</string>
 
+    <string name="notification_analysis_finished_title">Analysis finished</string>
+    <string name="notification_analysis_finished_ticker">Analyzed %s</string>
+
+
 
     <!-- Plugins -->
     <string name="plugin_custom_crypto_symm">Custom Symmetric Cryptography</string>
@@ -49,7 +53,6 @@
     <string name="about_text">Developed by Alexander Oprisnik © 2014</string>
     <string name="about_btn_more_info">More information</string>
     <string name="about_neutral_btn">OK</string>
-
 
     <plurals
         name="plural_methods">

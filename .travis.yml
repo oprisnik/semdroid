@@ -11,4 +11,17 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-language: java
+
+language: android
+
+android:
+  components:
+    - build-tools-20.0.0
+    - andorid-19
+    - android-20
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - sys-img-armeabi-v7a-android-20
+
+notifications:
+  email: false
