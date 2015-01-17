@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.oprisnik.semdroid.analysis.results.lite.LiteAppAnalysisReport;
@@ -35,7 +36,9 @@ public class AnalysisResultsOverviewActivity extends BaseActivity implements Ana
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_analysis_results_overview);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar tb = (Toolbar) findViewById(R.id.toolbar_actionbar);
+        setSupportActionBar(tb);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

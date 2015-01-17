@@ -20,7 +20,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.13+'
+        classpath 'com.android.tools.build:gradle:1.0.1'
     }
 }
 apply plugin: 'com.android.application'
@@ -35,7 +35,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:20.+'
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:appcompat-v7:21.0.3'
 
     compile fileTree(dir: '../semdroid-plugin-spa/libs', include: '*.jar')
 
@@ -46,19 +47,19 @@ dependencies {
 }
 
 def versionMajor = 1
-def versionMinor = 0
-def versionPatch = 1
+def versionMinor = 1
+def versionPatch = 0
 def versionBuild = 0
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion '20.0.0'
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
 
     defaultConfig {
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         minSdkVersion 11
-        targetSdkVersion 19
+        targetSdkVersion 21
         applicationId 'com.oprisnik.semdroid'
     }
 
@@ -91,14 +92,14 @@ android {
     buildTypes {
 
         debug {
-            runProguard false
+            minifyEnabled false
             versionNameSuffix '-debug'
             applicationIdSuffix '.debug'
             signingConfig signingConfigs.debug
         }
 
         release {
-            runProguard false
+            minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), file('proguard-project.txt')
         }

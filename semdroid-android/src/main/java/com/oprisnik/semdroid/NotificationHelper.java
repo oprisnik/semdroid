@@ -41,7 +41,7 @@ public class NotificationHelper {
 
         builder.setContentIntent(getContentIntent(context, packageName, resultFile))
                 .setTicker(context.getString(R.string.notification_analysis_finished_ticker, packageName))
-                .setSmallIcon(R.drawable.ic_launcher_flat)
+                .setSmallIcon(R.mipmap.ic_launcher_flat)
                 .setAutoCancel(true);
 
         NotificationManager manager = (NotificationManager) context

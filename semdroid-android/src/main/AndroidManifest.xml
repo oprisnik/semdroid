@@ -32,7 +32,7 @@
     <application
         android:name=".Semdroid"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/AppTheme" >
@@ -48,7 +48,7 @@
         <activity
             android:name=".AnalysisResultsActivity"
             android:label="@string/analysis_results"
-            android:theme="@style/DetailTheme" >
+            android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.oprisnik.semdroid.AnalysisResultsOverviewActivity" />
@@ -56,7 +56,7 @@
         <activity
             android:name=".AnalysisResultsOverviewActivity"
             android:label="@string/analysis_results"
-            android:theme="@style/DetailTheme" >
+            android:theme="@style/ToolbarTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.oprisnik.semdroid.AppListActivity" />

@@ -38,6 +38,7 @@ public class AppListActivity extends BaseActivity implements AppListFragment.Cal
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_list);
         mPluginManager = PluginCardManager.DEFAULT_PLUGINS;
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
     }
 
 

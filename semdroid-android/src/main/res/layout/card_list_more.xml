@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/card_headline_txt"
-        android:textColor="@color/highlight"
+        android:textColor="@color/primary"
         android:paddingBottom="@dimen/card_headline_padding_bottom"
         tools:text="Plugin Name"/>
 
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/card_list_txt"
-        android:textColor="@color/highlight"
+        android:textColor="@color/primary"
         android:ellipsize="end"
         android:maxLines="1"
         tools:text="and 10 more"/>

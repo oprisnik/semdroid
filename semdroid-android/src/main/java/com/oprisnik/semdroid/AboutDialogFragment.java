@@ -56,7 +56,7 @@ public class AboutDialogFragment extends DialogFragment {
         });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
-                .setIcon(R.drawable.ic_launcher)
+                .setIcon(R.mipmap.ic_launcher)
                 .setTitle(R.string.app_name)
                 .setNeutralButton(R.string.about_neutral_btn, null)
                 .setView(content);

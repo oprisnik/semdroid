@@ -16,17 +16,24 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/background"
               android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_item_height_2l"
-        android:background="@color/highlight"
+        android:background="@color/primary"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/keyline_margin"
         android:paddingRight="@dimen/keyline_margin">
@@ -78,16 +85,16 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:divider="@null"
-        android:numColumns="@integer/cols_results_overview"
         android:dividerHeight="@dimen/padding_card"
+        android:horizontalSpacing="@dimen/card_spacing_horiz"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="@integer/cols_results_overview"
         android:paddingBottom="@dimen/list_padding_top"
         android:paddingLeft="@dimen/padding_card"
         android:paddingRight="@dimen/padding_card"
         android:paddingTop="@dimen/list_padding_top"
         android:scrollbarStyle="outsideOverlay"
-        android:horizontalSpacing="@dimen/card_spacing_horiz"
         android:verticalSpacing="@dimen/card_spacing_vert"
-        android:listSelector="@android:color/transparent"
         tools:visibility="gone"/>
 
     <LinearLayout
@@ -109,9 +116,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/app_parsing_title"
                 android:textColor="@color/text"
-                android:textSize="@dimen/text_title_medium"
-                android:text="@string/app_parsing_title"/>
+                android:textSize="@dimen/text_title_medium"/>
 
             <ProgressBar
                 android:id="@+id/progress1"
@@ -130,9 +137,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_title_medium"
+                android:text="@string/app_analysis_title"
                 android:textColor="@color/text"
-                android:text="@string/app_analysis_title"/>
+                android:textSize="@dimen/text_title_medium"/>
 
             <ProgressBar
                 android:id="@+id/progress2"

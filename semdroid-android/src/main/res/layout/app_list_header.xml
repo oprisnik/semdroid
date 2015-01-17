@@ -20,7 +20,7 @@
           android:layout_width="match_parent"
           android:layout_height="@dimen/list_item_height_2l"
           android:gravity="center"
-          android:textColor="@color/highlight"
+          android:textColor="@color/primary"
           android:textSize="@dimen/text_title_medium"
           android:padding="@dimen/list_padding_top"
           android:text="@string/app_list_tip">

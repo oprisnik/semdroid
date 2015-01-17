@@ -18,11 +18,11 @@
 <resources>
 
 
-    <color name="highlight">#009688</color>
-    <color name="background">#ffececec</color>
+    <color name="primary">#009688</color>
+    <color name="primary_dark">#00897B</color>
 
     <color name="labelable_entry_bg">#e0f2f1</color>
-    <color name="label_entry_count">@color/highlight</color>
+    <color name="label_entry_count">@color/primary</color>
 
 
     <color name="text">#DE000000</color>
